@@ -1,0 +1,21 @@
+version: "3"
+
+services:
+  nextjs:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: nextjs-standalone
+    restart: always
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=production
+      # Add any other environment variables your app needs
+      # - DATABASE_URL=your_db_connection_string
+      # - API_KEY=your_api_key
+    # Uncomment below lines for volume mounting during development
+    # volumes:
+    #   - .:/app
+    #   - /app/node_modules
+    #   - /app/.next
